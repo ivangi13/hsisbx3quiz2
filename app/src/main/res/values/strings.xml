@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">hsisbx3quiz2</string>
+    <string name="no_induk">NIP</string>
+    <string name="isi_no_induk">ARN123-1234</string>
+    <string name="pass_word">Password</string>
+    <string name="isi_pass_word">**********</string>
+    <string name="login_access">Login</string>
+    <string name="not_access">Belum bisa akses?</string>
+    <string name="cs_ikhwan">Hubungi CS Ikhwan</string>
+    <string name="cs_akhwat">Hubungi CS Akhwat</string>
+    <string name="lihat_faq">Lihat FAQ</string>
+    <string name="hub_cs_ikhwan">Menghubungi CS Ikhwan 081081081081</string>
+    <string name="hub_cs_akhwat">Menghubungi CS Akhwat 082082082082</string>
+    <string name="go_faq">Menuju Halaman FAQ</string>
+    <string name="tanpa_nip">NIP harus diisi</string>
+    <string name="tanpa_password">Password harus diisi</string>
+    <string name="tanpa_nip_password">NIP dan Password harus diisi</string>
+    <string name="go_beranda">Menuju Halaman Beranda</string>
+</resources>
