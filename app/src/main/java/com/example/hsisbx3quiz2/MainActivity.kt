@@ -1,5 +1,6 @@
 package com.example.hsisbx3quiz2
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -121,7 +122,10 @@ fun Hsisbx3quiz2(modifier: Modifier = Modifier) {
         val login = LocalContext.current
         Button(
             onClick = {
-                      Toast.makeText(login, R.string.go_beranda, Toast.LENGTH_SHORT).show()
+                if (nipInput != "" && passwordInput != "") toastLogin(login, R.string.go_beranda)
+                else if (passwordInput != "") toastLogin(login, R.string.tanpa_nip)
+                else if (nipInput != "") toastLogin(login, R.string.tanpa_password)
+                else toastLogin(login, R.string.tanpa_nip_password)
             },
             shape = RoundedCornerShape(10.dp),
             modifier = modifier
@@ -178,7 +182,9 @@ fun Hsisbx3quiz2(modifier: Modifier = Modifier) {
     }
 }
 
-
+fun toastLogin(login: Context, message: Int) {
+    Toast.makeText(login, message, Toast.LENGTH_SHORT).show()
+}
 
 
 @Composable
@@ -218,3 +224,22 @@ fun Hsisbx3quiz2Preview() {
         Hsisbx3quiz2()
     }
 }
+
+/**
+ * TODO 1: Buat non-composable function
+ * - dalam halam ini kita memakai toast karena dipakai berulang2 di banyak tempat
+ * - tidak diawali dengan anotasi @Composable
+ * - contoh:
+ *          fun toastLogin(context: Context, message: Int) {
+ *              Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+ *          }
+ * 
+ *
+ * - contoh memanggil function ini
+ *              val context = LocalContext.current
+ *              Button(onClick = {
+ *                  toastLogin(context, R.string.cs_akhwat)
+ *              }) {
+ *                  Text("Tombol")
+ *              }
+ */
